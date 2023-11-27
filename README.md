@@ -57,10 +57,16 @@ we only need to run `Main_HR_Work.py` mode current file.
 Open link `http://localhost:5555` it will show UI for testing and configuration (now, only have open API doc links work)
 ![img.png](__App_data%2Fimages%2Fimg.png)
 
+The result like this:
+![img_4.png](__App_data%2Fimages%2Fimg_4.png)
+
+
 ### To run API, we can use Postman:
 
 This is some examples:
 ![img_1.png](__App_data%2Fimages%2Fimg_1.png)
+
+
 
 ## Universal search
 
