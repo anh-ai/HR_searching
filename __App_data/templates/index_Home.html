@@ -1,0 +1,10 @@
+<!--<p>For FastAPI documentation, check out <a href="{  { url_for('docs') }}">the documentation</a>.</p>-->
+<p>For API documentation, check out <a href="redoc">this link</a> or <a href="docs"> this link</a> for the documentations.</p>
+{% if (parameter) %}
+<p>This is parameter you just enter: [{{parameter}}]</p>
+{% endif %}
+<div>
+    <p>Client IP:: {{ client_ip }}</p>
+    <p>Client browser_name: {{ browser_name }}</p>
+    <p>Client user_agent: {{ user_agent }}</p>
+</div>

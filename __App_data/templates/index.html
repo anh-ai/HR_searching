@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function createCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+
+        function getRandomString(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        function createConnectedTokenCookie() {
+            let connectedTokenCookie = getCookie('connected_token');
+            if (!connectedTokenCookie) {
+                let randomString = getRandomString(10);
+                createCookie('connected_token', randomString, 365); // 365 days expiration
+                console.log('Connected Token Cookie created with value:', randomString);
+            } else {
+                console.log('Connected Token Cookie already exists with value:', connectedTokenCookie);
+            }
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(nameEQ) === 0) {
+                    return cookie.substring(nameEQ.length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        createConnectedTokenCookie(); // Call the function to create the connected_token cookie if it doesn't exist
+
+    </script>
+</head>
+<body>
+<div class="p-5 bg-secondary text-white text-center">
+    <h1>HR system</h1>
+    <p>AI Recommendation</p>
+</div>
+<div class="container-fluid mt-4" style="min-height:87vh; width:85%;">
+    <h2>Testing and Config system</h2>
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Configurations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Administrator</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="home" class="container-fluid tab-pane active"><br>
+            <h3>HOME</h3>
+            <div>
+                {% include "index_Home.html" %}
+            </div>
+        </div>
+        <div id="menu1" class="container-fluid tab-pane fade"><br>
+            <h3>Configurations</h3>
+            <div>
+                {% include "index_Configurations.html" %}
+            </div>
+        </div>
+        <div id="menu2" class="container-fluid tab-pane fade"><br>
+            <h3>Administrator</h3>
+            <div>
+                {% include "index_Administrator.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- Footer -->
+<footer class=" text-grey text-center py-2">
+    &copy; 2023 aisolutions.vn
+</footer>
+</body>
+</html>

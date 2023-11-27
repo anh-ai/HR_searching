@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title - [AiSolutions.vn]</title>
+    <meta name="description" content="AiSolutions-Giải pháp AI toàn diện">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/path/to/custom.css"> -->
+    <style type="text/css">
+        
+    
+
+    </style>
+  </
+head>
+<body>
+    <div data-include="header" id="
+header"></div>
+    <div class="container" style="
+
+min-height:65vh;">
+    
+    </div>
+
+    <script>
+        
+    </script>
+<div data-include="footer" id="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script async src="/path/to/custom.js"></script> -->
+<script> 
+    async function fetchHtmlAsText(url) { 
+        try { const response = await fetch(url);
+                if (response.ok) {
+                  return await response.text();
+                } else {return '';}
+            } catch (error) { return '';}
+        }
+    async function loadHome() {
+    document.getElementById("header").innerHTML = await fetchHtmlAsText("http://aisolutions.vn/vendor/header.html");
+    document.getElementById("footer").innerHTML = await fetchHtmlAsText("http://aisolutions.vn/vendor/
+footer.html");
+    }
+    loadHome();
+
+</script>
+</body>
+</html>

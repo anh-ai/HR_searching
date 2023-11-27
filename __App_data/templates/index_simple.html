@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FastAPI Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <h1>FastAPI Example</h1>
+    <p>Parameter from URL: {{ parameter }}</p>
+    <div>
+        <p>Client IP:: {{ client_ip }}</p>
+        <p>Client Browser: {{ user_agent }}</p>
+    </div>
+</body>
+</html>
