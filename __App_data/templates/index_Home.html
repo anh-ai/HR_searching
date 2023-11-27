@@ -7,4 +7,13 @@
     <p>Client IP:: {{ client_ip }}</p>
     <p>Client browser_name: {{ browser_name }}</p>
     <p>Client user_agent: {{ user_agent }}</p>
+    <hr />
+    <p>Database Columns-Value examples:</p>
+    <p>
+        <ul>
+          {% for key, value in List_Columns_Name.items() %}
+            <li><b>{{ key }}</b>: {{ value }}</li>
+          {% endfor %}
+        </ul>
+    </p>
 </div>

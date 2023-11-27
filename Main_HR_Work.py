@@ -45,7 +45,7 @@ mlog = aFuncs.MyLogger()
 
 record = collection.find_one()
 GVa.List_Columns_Name = list(record.keys())
-del record
+# del record
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["2/5seconds"])
 
@@ -137,7 +137,6 @@ async def read_item(request: Request, item_id: int, limit: int = 10, dict_query:
 
 
 @app.get("/employees/")
-@limiter.shared_limit(limit_value="2/5seconds", scope="employees")
 async def get_employees(
         status: str = Query(None, description="Status filter (Active, Not started, Terminated)"),
         locations: str = Query(None, description="Locations filter"),
@@ -192,13 +191,13 @@ async def Home(request: Request, parameter: str = None):
     
     user_agent_info = user_agent_parser.Parse(user_agent_str)
     browser_name = user_agent_info['user_agent']['family']  # Lấy tên của trình duyệt
-    
     return templates.TemplateResponse("index.html", {
         "request": request,
         "parameter": parameter,
         "client_ip": client_ip,
         "user_agent": user_agent_str,
         "browser_name": browser_name,  # Trả về tên của trình duyệt
+        "List_Columns_Name": record
     })
 
 
